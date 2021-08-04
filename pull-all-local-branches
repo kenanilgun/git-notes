@@ -1,3 +1,7 @@
+#!/bin/bash
+
+#cd ~/Documents/Bitbucket/
+
 for d in */; do
     echo "################ Folder: $d ################"
 	cd ./"$d"
