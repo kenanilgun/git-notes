@@ -1,0 +1,14 @@
+for d in */; do
+    echo "################ Folder: $d ################"
+	cd ./"$d"
+	
+	git branch -l | grep -v '\->'  | sed -E 's/^\*/ /'  |  while read branch; 
+	do 
+		echo "---------------- Checkout branch: $branch";
+		git checkout "$branch"
+		echo "---------------- Pull branch: $branch";
+		git pull
+	done
+
+	cd ..
+done
